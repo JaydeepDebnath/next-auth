@@ -1,7 +1,6 @@
 import User from '@/models/user.models';
 import * as nodemailer from 'nodemailer';
 import bcryptjs from 'bcryptjs';
-import { TransportOptions } from 'nodemailer';
 
 export const sendEmail = async ({email,emailType,userId}:any) => {
     try {
@@ -20,7 +19,7 @@ export const sendEmail = async ({email,emailType,userId}:any) => {
                         Date.now()+36000000}
                 }) 
         }
-        const transportOptions : nodemailer.TransportOptions = {
+        const transportOptions = {
             host: process.env.NODEMAILER_HOST as string,
             port:Number(process.env.NODEMAILER_PORT),
             auth: {

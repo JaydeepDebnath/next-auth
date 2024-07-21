@@ -28,7 +28,7 @@ export default function VerifyEmailPage() {
 
         // const {query} = router;
         // const urlTokenTwo = query.token  // next js utilization        
-    },[])
+    },[verifyUserEmail])
 
 
     useEffect(() => {

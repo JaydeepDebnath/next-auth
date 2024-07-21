@@ -37,7 +37,7 @@ export default function LoginPage() {
       } else{
           setButtonDisabled(true);
       }
-  }, [user]);
+  }, [user,]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-8 bg-gradient-to-r from-blue-400 to-purple-500">
@@ -71,7 +71,7 @@ export default function LoginPage() {
         </button>
         
         <Link href="/signup" className="text-white underline mt-4 hover:text-blue-300 transition duration-300">
-            Don't have an account? Sign up here.
+            <p>Don{'\''}t have an account? Sign up here.</p>
         </Link>
     </div>
   );
