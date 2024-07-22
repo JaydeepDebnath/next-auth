@@ -39,23 +39,26 @@ export default function VerifyEmailPage() {
     },[token])
 
     return(
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+        <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gradient-to-br from-blue-400 to-purple-600 text-white">
 
-            <h1 className="text-4xl">Verify Email</h1>
-            <h2 className="p-2 bg-orange-500 text-black">{token ? `${token}` : "no token"}</h2>
+            <h1 className="text-4x font-bold mb-8">Verify Email</h1>
+            <h2 className="p-2 bg-orange-500 text-black rounded-lg shadow-md">
+                {token ? `${token}` : "no token"}</h2>
 
             {verified && (
-                <div>
-                    <h2 className="text-2xl">Email Verified</h2>
-                    <Link href="/login">
+                <div className='mt-8' >
+                    <h2 className="text-2xl font-semibold mb-4 text-green-500">Email Verified</h2>
+                    <Link href="/login" className="text-lg bg-white text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-gray-200">
                         Login
                     </Link>
                 </div>
             )}
             {error && (
-                <div>
-                    <h2 className="text-2xl bg-red-500 text-black">Error</h2>
-                    
+                <div className='mt-8'>
+                    <h2 className="text-2xl font-semibold mb-4 bg-red-500 text-white px-4 py-2 rounded-md shadow-md">
+                        Error Occurred
+                    </h2>
+                    <p className="text-lg text-red-200">{error}</p>
                 </div>
             )}
         </div>
